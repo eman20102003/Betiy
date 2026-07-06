@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root{
+  --ink:#12151c;
+  --ink-soft:#1b212b;
+  --paper:#efebe3;
+  --parchment:#e8e2d6;
+  --gold:#a6813c;
+  --gold-soft:#c9ad74;
+  --emerald:#1f3b33;
+  --text:#1a1d24;
+  --text-muted:#6b6558;
+  --line:rgba(233,225,209,0.16);
+  --danger:#7a2e2e;
+}
+
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  padding:1.1rem 3rem;
+  background:var(--ink);
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+
+.navbar::after{
+  content:"";
+  position:absolute;
+  left:3rem;
+  right:3rem;
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  opacity:.6;
+}
+
+.navbar-brand a{
+  font-family:"Fraunces", serif;
+  font-weight:600;
+  font-size:1.5rem;
+  letter-spacing:.14em;
+  color:var(--paper);
+  text-decoration:none;
+  position:relative;
+  padding-bottom:.3rem;
+}
+
+.navbar-brand a::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-.15rem;
+  width:.32rem;
+  height:.32rem;
+  background:var(--gold);
+  transform:translateX(-50%) rotate(45deg);
+}
+
+.navbar-links{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+}
+
+.navbar-links a{
+  font-family:"Manrope", sans-serif;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(239,235,227,0.72);
+  text-decoration:none;
+  position:relative;
+  padding-bottom:.25rem;
+  transition:color .25s ease;
+}
+
+.navbar-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:1px;
+  background:var(--gold-soft);
+  transition:width .3s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus-visible{
+  color:var(--paper);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a:focus-visible::after{
+  width:100%;
+}
+
+.navbar-greeting{
+  font-family:"Manrope", sans-serif;
+  font-size:.8rem;
+  letter-spacing:.04em;
+  color:var(--gold-soft);
+}
+
+.navbar-logout-btn{
+  font-family:"Manrope", sans-serif;
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  background:transparent;
+  border:1px solid rgba(198,167,105,0.45);
+  color:var(--paper);
+  padding:.55rem 1.1rem;
+  cursor:pointer;
+  transition:background .25s ease, border-color .25s ease;
+}
+
+.navbar-logout-btn:hover,
+.navbar-logout-btn:focus-visible{
+  background:rgba(198,167,105,0.12);
+  border-color:var(--gold);
+}
+
+.navbar-logout-btn:focus-visible,
+.navbar-links a:focus-visible{
+  outline:1px solid var(--gold-soft);
+  outline-offset:3px;
+}
+
+@media (max-width:720px){
+  .navbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:1rem;
+    padding:1rem 1.5rem;
+  }
+  .navbar-links{
+    flex-wrap:wrap;
+    gap:1rem 1.5rem;
+  }
+}

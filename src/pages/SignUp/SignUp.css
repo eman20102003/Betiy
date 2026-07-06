@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root{
+  --ink:#12151c;
+  --ink-soft:#1b212b;
+  --paper:#efebe3;
+  --gold:#a6813c;
+  --gold-soft:#c9ad74;
+  --emerald:#1f3b33;
+  --text:#1a1d24;
+  --text-muted:#6b6558;
+  --line:rgba(233,225,209,0.16);
+  --danger:#7a2e2e;
+}
+
+.auth-container{
+  min-height:calc(100vh - 68px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--ink);
+  padding:2rem 1.5rem;
+}
+
+.auth-card{
+  width:100%;
+  max-width:380px;
+  background:var(--paper);
+  padding:2.75rem 2.5rem;
+  position:relative;
+  border-top:2px solid var(--gold);
+}
+
+.auth-card::before{
+  content:"";
+  position:absolute;
+  top:-.3rem;
+  left:50%;
+  width:.45rem;
+  height:.45rem;
+  background:var(--gold);
+  transform:translateX(-50%) rotate(45deg);
+}
+
+.auth-card h2{
+  font-family:"Fraunces", serif;
+  font-weight:600;
+  font-style:italic;
+  font-size:1.9rem;
+  color:var(--ink);
+  margin:0 0 2rem;
+  text-align:center;
+}
+
+.auth-form{
+  display:flex;
+  flex-direction:column;
+  gap:1.1rem;
+}
+
+.auth-form input{
+  font-family:"Manrope", sans-serif;
+  font-size:.9rem;
+  color:var(--text);
+  background:transparent;
+  border:none;
+  border-bottom:1px solid var(--line);
+  padding:.6rem .1rem;
+  transition:border-color .25s ease;
+}
+
+.auth-form input::placeholder{
+  color:var(--text-muted);
+}
+
+.auth-form input:focus-visible{
+  outline:none;
+  border-bottom-color:var(--gold);
+}
+
+.auth-error{
+  font-family:"Manrope", sans-serif;
+  font-size:.8rem;
+  color:var(--danger);
+  margin:0;
+}
+
+.auth-submit-btn{
+  margin-top:.5rem;
+  font-family:"Manrope", sans-serif;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  background:var(--ink);
+  color:var(--paper);
+  border:none;
+  padding:.85rem 1rem;
+  cursor:pointer;
+  transition:background .25s ease;
+}
+
+.auth-submit-btn:hover,
+.auth-submit-btn:focus-visible{
+  background:var(--emerald);
+}
+
+.auth-submit-btn:focus-visible{
+  outline:1px solid var(--gold);
+  outline-offset:3px;
+}
+
+.auth-switch{
+  margin:1.75rem 0 0;
+  text-align:center;
+  font-family:"Manrope", sans-serif;
+  font-size:.82rem;
+  color:var(--text-muted);
+}
+
+.auth-switch a{
+  color:var(--gold);
+  font-weight:600;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease;
+}
+
+.auth-switch a:hover,
+.auth-switch a:focus-visible{
+  border-color:var(--gold);
+}

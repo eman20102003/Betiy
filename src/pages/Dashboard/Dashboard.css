@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root{
+  --ink:#12151c;
+  --paper:#efebe3;
+  --gold:#a6813c;
+  --emerald:#1f3b33;
+  --text:#1a1d24;
+  --text-muted:#6b6558;
+  --line:rgba(26,29,36,0.14);
+}
+
+.dashboard-container{
+  max-width:720px;
+  margin:0 auto;
+  padding:4rem 1.5rem 5rem;
+}
+
+.dashboard-container h1{
+  font-family:"Fraunces", serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:2rem;
+  color:var(--ink);
+  margin:0 0 2rem;
+  position:relative;
+  padding-bottom:1rem;
+}
+
+.dashboard-container h1::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:3.25rem;
+  height:2px;
+  background:var(--gold);
+}
+
+.dashboard-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-left:2px solid var(--gold);
+  padding:2rem 2.25rem;
+}
+
+.dashboard-card h3{
+  font-family:"Fraunces", serif;
+  font-weight:500;
+  font-size:1.3rem;
+  color:var(--ink);
+  margin:0 0 .6rem;
+}
+
+.dashboard-card p{
+  font-family:"Manrope", sans-serif;
+  font-size:.9rem;
+  color:var(--text-muted);
+  margin:0;
+}
