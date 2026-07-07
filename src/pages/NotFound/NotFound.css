@@ -18,6 +18,11 @@
   text-align:center;
   padding:2rem;
   gap:.5rem;
+  transition:background .3s ease;
+}
+
+.app.dark .notfound-container{
+  background:#0a0c10;
 }
 
 .notfound-code{

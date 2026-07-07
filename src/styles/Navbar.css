@@ -22,7 +22,10 @@
   padding:1.1rem 3rem;
   background:var(--ink);
   border-bottom:1px solid var(--line);
-  position:relative;
+  position:sticky;
+  top:0;
+  z-index:100;
+  transition:background .3s ease, border-color .3s ease;
 }
 
 .navbar::after{
@@ -36,6 +39,57 @@
   opacity:.6;
 }
 
+/* light theme override — same tokens, inverted surface */
+.navbar.light{
+  background:var(--paper);
+  border-bottom:1px solid rgba(26,29,36,0.12);
+}
+
+.navbar.light .navbar-brand a{
+  color:var(--ink);
+}
+
+.navbar.light .navbar-links a{
+  color:rgba(26,29,36,0.68);
+}
+
+.navbar.light .navbar-links a:hover,
+.navbar.light .navbar-links a:focus-visible{
+  color:var(--ink);
+}
+
+.navbar.light .navbar-greeting{
+  color:var(--gold);
+}
+
+.navbar.light .navbar-logout-btn{
+  color:var(--ink);
+  border-color:rgba(26,29,36,0.25);
+}
+
+.navbar.light .navbar-logout-btn:hover,
+.navbar.light .navbar-logout-btn:focus-visible{
+  background:rgba(166,129,60,0.1);
+  border-color:var(--gold);
+}
+
+.navbar.light .navbar-brand button{
+  color:var(--ink);
+  border-color:rgba(26,29,36,0.25);
+}
+
+.navbar.light .navbar-brand button:hover,
+.navbar.light .navbar-brand button:focus-visible{
+  border-color:var(--gold);
+  background:rgba(166,129,60,0.1);
+}
+
+.navbar-brand{
+  display:flex;
+  align-items:center;
+  gap:1.25rem;
+}
+
 .navbar-brand a{
   font-family:"Fraunces", serif;
   font-weight:600;
@@ -45,6 +99,32 @@
   text-decoration:none;
   position:relative;
   padding-bottom:.3rem;
+}
+
+.navbar-brand button{
+  font-family:"Manrope", sans-serif;
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--paper);
+  background:transparent;
+  border:1px solid rgba(198,167,105,0.4);
+  border-radius:999px;
+  padding:.35rem .85rem;
+  cursor:pointer;
+  transition:background .25s ease, border-color .25s ease;
+}
+
+.navbar-brand button:hover,
+.navbar-brand button:focus-visible{
+  background:rgba(198,167,105,0.12);
+  border-color:var(--gold);
+}
+
+.navbar-brand button:focus-visible{
+  outline:1px solid var(--gold-soft);
+  outline-offset:3px;
 }
 
 .navbar-brand a::before{

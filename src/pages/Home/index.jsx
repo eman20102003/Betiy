@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useMemo  } from "react";
 import Navbar from "../../components/Navbar";
 import ProductCard from "../../components/ProductCard";
 import { getAllProducts } from "../../services/productService";
@@ -34,25 +34,38 @@ function Home() {
 
 
   const categories = [
-    ...new Set(safeProducts.map(p => p.category?.name))
+    ...new Set(safeProducts.map(p => p.category?.name).filter(Boolean))
   ];
 
+  const filteredProducts = useMemo(() => {
 
-  let filtered = safeProducts
-    .filter(p =>
-      p.title?.toLowerCase().includes(search.toLowerCase())
+  console.log("Filtering products...");
+
+  let result = [...safeProducts]
+    .filter(product =>
+      product.title
+        ?.toLowerCase()
+        .includes(search.toLowerCase())
     )
-    .filter(p =>
-      category ? p.category?.name === category : true
+    .filter(product =>
+      category
+        ? product.category?.name === category
+        : true
     );
 
+
   if (sort === "low") {
-    filtered.sort((a, b) => a.price - b.price);
+    result.sort((a, b) => a.price - b.price);
   }
 
   if (sort === "high") {
-    filtered.sort((a, b) => b.price - a.price);
+    result.sort((a, b) => b.price - a.price);
   }
+
+
+  return result;
+
+}, [products, search, category, sort]);
 
   const handleView = (id) => {
     if (!isAuthenticated) {
@@ -107,7 +120,7 @@ function Home() {
           <h2>Products</h2>
 
           <div className="products-grid">
-            {filtered.map(product => (
+            {filteredProducts.map(product => (
               <ProductCard
                 key={product.id}
                 product={product}

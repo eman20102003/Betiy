@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import "../styles/Navbar.css";
+import { ThemeContext } from "../context/ThemeContext";
 
 function Navbar() {
   const { user, logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
 
   const isHome = location.pathname === "/";
 
@@ -15,9 +18,13 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${darkMode ? "dark" : "light"}`}>
       <div className="navbar-brand">
         <Link to="/">BETIY</Link>
+
+         <button onClick={toggleTheme}>
+          {darkMode ? "☀️ Light" : "🌙 Dark"}
+        </button>
       </div>
 
       <div className="navbar-links">

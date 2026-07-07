@@ -42,6 +42,7 @@
   border:1px solid var(--line);
   border-left:2px solid var(--gold);
   padding:2rem 2.25rem;
+  transition:background .3s ease;
 }
 
 .dashboard-card h3{
@@ -57,4 +58,21 @@
   font-size:.9rem;
   color:var(--text-muted);
   margin:0;
+}
+
+.app.dark .dashboard-container h1{
+  color:var(--paper);
+}
+
+.app.dark .dashboard-card{
+  background:var(--ink-soft, #1b212b);
+  border-color:rgba(239,235,227,0.14);
+}
+
+.app.dark .dashboard-card h3{
+  color:var(--paper);
+}
+
+.app.dark .dashboard-card p{
+  color:rgba(239,235,227,0.6);
 }

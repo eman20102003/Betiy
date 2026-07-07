@@ -20,6 +20,15 @@
   justify-content:center;
   background:var(--ink);
   padding:2rem 1.5rem;
+  transition:background .3s ease;
+}
+
+.app.light .auth-container{
+  background:var(--ink);
+}
+
+.app.dark .auth-container{
+  background:#0a0c10;
 }
 
 .auth-card{
@@ -29,6 +38,28 @@
   padding:2.75rem 2.5rem;
   position:relative;
   border-top:2px solid var(--gold);
+  transition:background .3s ease, color .3s ease;
+}
+
+.app.dark .auth-card{
+  background:var(--ink-soft);
+}
+
+.app.dark .auth-card h2{
+  color:var(--paper);
+}
+
+.app.dark .auth-form input{
+  color:var(--paper);
+  border-bottom-color:rgba(239,235,227,0.2);
+}
+
+.app.dark .auth-form input::placeholder{
+  color:rgba(239,235,227,0.45);
+}
+
+.app.dark .auth-switch{
+  color:rgba(239,235,227,0.6);
 }
 
 .auth-card::before{
