@@ -12,19 +12,48 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+const validate = () => {
 
-    
+  if (!email.trim()) {
+    return "Email is required";
+  }
 
-    const success = login(email, password);
+  if (!email.includes("@")) {
+    return "Invalid email format";
+  }
 
-    if (success) {
-      navigate("/dashboard");
-    } else {
-      setError("Invalid email or password");
-    }
-  };
+  if (!password) {
+    return "Password is required";
+  }
+
+  return "";
+};
+
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+
+
+  const validationError = validate();
+
+  if (validationError) {
+    setError(validationError);
+    return;
+  }
+
+
+  const success = await login(
+    email,
+    password
+  );
+
+
+  if (success) {
+    navigate("/dashboard");
+  } else {
+    setError("Invalid email or password");
+  }
+};
 
   return (
     <div>

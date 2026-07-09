@@ -4,6 +4,7 @@
   --ink:#12151c;
   --paper:#efebe3;
   --gold:#a6813c;
+  --emerald:#1f3b33;
   --text-muted:#6b6558;
   --line:rgba(233,225,209,0.16);
 }
@@ -23,6 +24,32 @@
 
 .app.dark .notfound-container{
   background:#0a0c10;
+}
+
+.app.light .notfound-container{
+  background:var(--paper);
+}
+
+.app.light .notfound-code{
+  color:var(--ink);
+}
+
+.app.light .notfound-code::after{
+  background:var(--gold);
+}
+
+.app.light .notfound-message{
+  color:var(--text-muted);
+}
+
+.app.light .notfound-link{
+  color:var(--paper);
+  background:var(--ink);
+}
+
+.app.light .notfound-link:hover,
+.app.light .notfound-link:focus-visible{
+  background:var(--emerald);
 }
 
 .notfound-code{

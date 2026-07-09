@@ -13,20 +13,57 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSignup = (e) => {
-    e.preventDefault();
 
-    if (!name || !email || !password) {
-      setError("All fields are required");
-      return;
-    }
 
-    
 
-    signup(name, email, password);
+  const validate = () => {
+  if (!name.trim()) {
+    return "Name is required";
+  }
 
-    navigate("/dashboard");
-  };
+  if (!email.trim()) {
+    return "Email is required";
+  }
+
+  if (!email.includes("@")) {
+    return "Invalid email format";
+  }
+
+  if (!password) {
+    return "Password is required";
+  }
+
+  if (password.length < 6) {
+    return "Password must be at least 6 characters";
+  }
+
+  return "";
+};
+
+ const handleSignup = async (e) => {
+  e.preventDefault();
+
+  const validationError = validate();
+
+  if (validationError) {
+    setError(validationError);
+    return;
+  }
+
+
+  const success = await signup(
+    name,
+    email,
+    password
+  );
+
+
+  if (success) {
+    navigate("/login");
+  } else {
+    setError("Signup failed");
+  }
+};
 
   return (
     <div>

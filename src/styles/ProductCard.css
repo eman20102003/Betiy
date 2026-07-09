@@ -130,6 +130,14 @@
   position:relative;
 }
 
+.app.dark .product-view-btn{
+  color:var(--gold-soft, #c9ad74);
+}
+
+.app.dark .product-view-btn::after{
+  background:var(--gold-soft, #c9ad74);
+}
+
 .product-view-btn::after{
   content:"";
   position:absolute;

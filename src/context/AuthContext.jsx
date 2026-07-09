@@ -1,78 +1,71 @@
 import { createContext, useEffect, useState } from "react";
-
+import { signupUser, loginUser, getCurrentUser} from "../services/authService";
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const currentUser = localStorage.getItem("currentUser");
+     const loadUser = async () => {
+      const token = localStorage.getItem("token");
 
-    if (currentUser) {
-      setUser(JSON.parse(currentUser));
-    }
+      if (!token) return;
 
-    // Backend:
-    // const token = localStorage.getItem("token");
+      try {
+        const response = await getCurrentUser(token);
+        setUser(response.data.user);
+      } catch (err) {
+        console.log(err);
+        localStorage.removeItem("token");
+        setUser(null);
+      }
+    };
+
+    loadUser();
     
   }, []);
 
-  const signup = (name, email, password /* token */) => {
-    // Backend:
-    // localStorage.setItem("token",token);
-    // localStorage.setItem(
-    //   "currentUser",
-    //   JSON.stringify(user)
-    // );
-    // setUser(user);
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const newUser = {
-      name,
-      email,
-      password,
-    };
+  const signup = async (name, email, password) => {
+    try {
+      await signupUser({
+        name,
+        email,
+        password,
+      });
 
-    users.push(newUser);
-
-    localStorage.setItem("users", JSON.stringify(users));
-
-  
-    localStorage.setItem("currentUser", JSON.stringify(newUser));
-    setUser(newUser);
+      return true;
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
   };
 
-  const login = (email, password /* token */) => {
-    // Backend:
-    // localStorage.setItem("token", token);
-    // localStorage.setItem(
-    //   "currentUser",
-    //   JSON.stringify(user)
-    // );
-    // setUser(user);
-    // return true;
+  
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+  const login = async (email, password) => {
+     try {
+      const response = await loginUser({
+        email,
+        password,
+      });
 
-    const foundUser = users.find(
-      (u) => u.email === email && u.password === password
-    );
+      const { user, token } = response.data;
 
-    if (foundUser) {
-      localStorage.setItem("currentUser", JSON.stringify(foundUser));
-      setUser(foundUser);
+      localStorage.setItem("token", token);
+
+      setUser(user);
+
       return true;
+    } catch (err) {
+      console.log(err);
+      return false;
     }
-
-    return false;
   };
 
   const logout = () => {
-    // Backend:
-    // localStorage.removeItem("token");
-
-    localStorage.removeItem("currentUser");
+    localStorage.removeItem("token");
     setUser(null);
   };
 
