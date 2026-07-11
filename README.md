@@ -1,3 +1,1 @@
-# betiy:)
-React Project 
-In progress
+# Noto:)
