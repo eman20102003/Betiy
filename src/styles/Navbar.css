@@ -1,225 +1,105 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap");
+.navbar {
 
-:root{
-  --ink:#12151c;
-  --ink-soft:#1b212b;
-  --paper:#efebe3;
-  --parchment:#e8e2d6;
-  --gold:#a6813c;
-  --gold-soft:#c9ad74;
-  --emerald:#1f3b33;
-  --text:#1a1d24;
-  --text-muted:#6b6558;
-  --line:rgba(233,225,209,0.16);
-  --danger:#7a2e2e;
-}
-
-.navbar{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:2rem;
-  padding:1.1rem 3rem;
-  background:var(--ink);
-  border-bottom:1px solid var(--line);
-  position:sticky;
-  top:0;
-  z-index:100;
-  transition:background .3s ease, border-color .3s ease;
+  align-items:center;
+
+  padding:18px 45px;
+
+  background:#ffffff;
+
+  box-shadow:0 5px 20px rgba(0,0,0,0.06);
+
 }
 
-.navbar::after{
-  content:"";
-  position:absolute;
-  left:3rem;
-  right:3rem;
-  bottom:-1px;
-  height:1px;
-  background:linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
-  opacity:.6;
-}
 
-/* light theme override — same tokens, inverted surface */
-.navbar.light{
-  background:var(--paper);
-  border-bottom:1px solid rgba(26,29,36,0.12);
-}
+.navbar-brand {
 
-.navbar.light .navbar-brand a{
-  color:var(--ink);
-}
-
-.navbar.light .navbar-links a{
-  color:rgba(26,29,36,0.68);
-}
-
-.navbar.light .navbar-links a:hover,
-.navbar.light .navbar-links a:focus-visible{
-  color:var(--ink);
-}
-
-.navbar.light .navbar-greeting{
-  color:var(--gold);
-}
-
-.navbar.light .navbar-logout-btn{
-  color:var(--ink);
-  border-color:rgba(26,29,36,0.25);
-}
-
-.navbar.light .navbar-logout-btn:hover,
-.navbar.light .navbar-logout-btn:focus-visible{
-  background:rgba(166,129,60,0.1);
-  border-color:var(--gold);
-}
-
-.navbar.light .navbar-brand button{
-  color:var(--ink);
-  border-color:rgba(26,29,36,0.25);
-}
-
-.navbar.light .navbar-brand button:hover,
-.navbar.light .navbar-brand button:focus-visible{
-  border-color:var(--gold);
-  background:rgba(166,129,60,0.1);
-}
-
-.navbar-brand{
   display:flex;
   align-items:center;
-  gap:1.25rem;
+  gap:15px;
+
+  font-size:24px;
+  font-weight:600;
+
+  color:#6c63ff;
+
 }
 
-.navbar-brand a{
-  font-family:"Fraunces", serif;
-  font-weight:600;
-  font-size:1.5rem;
-  letter-spacing:.14em;
-  color:var(--paper);
-  text-decoration:none;
-  position:relative;
-  padding-bottom:.3rem;
-}
 
-.navbar-brand button{
-  font-family:"Manrope", sans-serif;
-  font-size:.7rem;
-  font-weight:600;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--paper);
-  background:transparent;
-  border:1px solid rgba(198,167,105,0.4);
-  border-radius:999px;
-  padding:.35rem .85rem;
+
+.theme-btn {
+
+  border:none;
+
+  background:#f2efff;
+
+  padding:8px 12px;
+
+  border-radius:50%;
+
   cursor:pointer;
-  transition:background .25s ease, border-color .25s ease;
+
 }
 
-.navbar-brand button:hover,
-.navbar-brand button:focus-visible{
-  background:rgba(198,167,105,0.12);
-  border-color:var(--gold);
-}
 
-.navbar-brand button:focus-visible{
-  outline:1px solid var(--gold-soft);
-  outline-offset:3px;
-}
 
-.navbar-brand a::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:-.15rem;
-  width:.32rem;
-  height:.32rem;
-  background:var(--gold);
-  transform:translateX(-50%) rotate(45deg);
-}
+.navbar-links {
 
-.navbar-links{
   display:flex;
+
   align-items:center;
-  gap:2rem;
+
+  gap:22px;
+
 }
 
-.navbar-links a{
-  font-family:"Manrope", sans-serif;
-  font-size:.78rem;
-  font-weight:600;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:rgba(239,235,227,0.72);
-  text-decoration:none;
-  position:relative;
-  padding-bottom:.25rem;
-  transition:color .25s ease;
+
+.navbar-links a:hover {
+
+  color:#6c63ff;
+
 }
 
-.navbar-links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:1px;
-  background:var(--gold-soft);
-  transition:width .3s ease;
+
+
+.navbar-greeting {
+
+  color:#777;
+
 }
 
-.navbar-links a:hover,
-.navbar-links a:focus-visible{
-  color:var(--paper);
-}
 
-.navbar-links a:hover::after,
-.navbar-links a:focus-visible::after{
-  width:100%;
-}
 
-.navbar-greeting{
-  font-family:"Manrope", sans-serif;
-  font-size:.8rem;
-  letter-spacing:.04em;
-  color:var(--gold-soft);
-}
+.navbar-logout-btn {
 
-.navbar-logout-btn{
-  font-family:"Manrope", sans-serif;
-  font-size:.75rem;
-  font-weight:600;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  background:transparent;
-  border:1px solid rgba(198,167,105,0.45);
-  color:var(--paper);
-  padding:.55rem 1.1rem;
+  border:none;
+
+  background:#ff8fab;
+
+  color:white;
+
+  padding:9px 16px;
+
+  border-radius:12px;
+
   cursor:pointer;
-  transition:background .25s ease, border-color .25s ease;
+
 }
 
-.navbar-logout-btn:hover,
-.navbar-logout-btn:focus-visible{
-  background:rgba(198,167,105,0.12);
-  border-color:var(--gold);
+
+
+/* Dark */
+
+.app.dark .navbar {
+
+ background:#20232a;
+
 }
 
-.navbar-logout-btn:focus-visible,
-.navbar-links a:focus-visible{
-  outline:1px solid var(--gold-soft);
-  outline-offset:3px;
-}
 
-@media (max-width:720px){
-  .navbar{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:1rem;
-    padding:1rem 1.5rem;
-  }
-  .navbar-links{
-    flex-wrap:wrap;
-    gap:1rem 1.5rem;
-  }
+.app.dark .navbar-greeting {
+
+ color:#ddd;
+
 }

@@ -1,109 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Manrope:wght@400;600;700&display=swap");
-
-:root{
-  --ink:#12151c;
-  --paper:#efebe3;
-  --gold:#a6813c;
-  --emerald:#1f3b33;
-  --text-muted:#6b6558;
-  --line:rgba(233,225,209,0.16);
-}
-
 .notfound-container{
-  min-height:calc(100vh - 68px);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background:var(--ink);
-  text-align:center;
-  padding:2rem;
-  gap:.5rem;
-  transition:background .3s ease;
-}
 
-.app.dark .notfound-container{
-  background:#0a0c10;
-}
+    min-height:80vh;
 
-.app.light .notfound-container{
-  background:var(--paper);
-}
+    display:flex;
 
-.app.light .notfound-code{
-  color:var(--ink);
-}
+    justify-content:center;
 
-.app.light .notfound-code::after{
-  background:var(--gold);
-}
+    align-items:center;
 
-.app.light .notfound-message{
-  color:var(--text-muted);
-}
+    flex-direction:column;
 
-.app.light .notfound-link{
-  color:var(--paper);
-  background:var(--ink);
-}
+    text-align:center;
 
-.app.light .notfound-link:hover,
-.app.light .notfound-link:focus-visible{
-  background:var(--emerald);
 }
 
 .notfound-code{
-  font-family:"Fraunces", serif;
-  font-weight:600;
-  font-size:6rem;
-  letter-spacing:.05em;
-  color:var(--paper);
-  margin:0;
-  line-height:1;
-  position:relative;
-  padding-bottom:1.5rem;
-}
 
-.notfound-code::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:0;
-  width:.5rem;
-  height:.5rem;
-  background:var(--gold);
-  transform:translateX(-50%) rotate(45deg);
+    font-size:120px;
+
+    color:#6c63ff;
+
+    margin-bottom:10px;
+
 }
 
 .notfound-message{
-  font-family:"Manrope", sans-serif;
-  font-weight:600;
-  font-size:.85rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--text-muted);
-  margin:1.25rem 0 2rem;
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
 }
 
 .notfound-link{
-  font-family:"Manrope", sans-serif;
-  font-size:.78rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--ink);
-  background:var(--gold);
-  text-decoration:none;
-  padding:.9rem 2rem;
-  transition:background .25s ease;
+
+    background:#6c63ff;
+
+    color:white;
+
+    padding:14px 30px;
+
+    border-radius:14px;
+
+    transition:.3s;
+
 }
 
-.notfound-link:hover,
-.notfound-link:focus-visible{
-  background:#c9ad74;
-}
+.notfound-link:hover{
 
-.notfound-link:focus-visible{
-  outline:1px solid var(--paper);
-  outline-offset:3px;
+    transform:translateY(-2px);
+
 }

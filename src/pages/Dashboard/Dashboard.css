@@ -1,78 +1,63 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap");
-
-:root{
-  --ink:#12151c;
-  --paper:#efebe3;
-  --gold:#a6813c;
-  --emerald:#1f3b33;
-  --text:#1a1d24;
-  --text-muted:#6b6558;
-  --line:rgba(26,29,36,0.14);
-}
-
 .dashboard-container{
-  max-width:720px;
-  margin:0 auto;
-  padding:4rem 1.5rem 5rem;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px;
+
 }
 
 .dashboard-container h1{
-  font-family:"Fraunces", serif;
-  font-weight:500;
-  font-style:italic;
-  font-size:2rem;
-  color:var(--ink);
-  margin:0 0 2rem;
-  position:relative;
-  padding-bottom:1rem;
+
+    margin-bottom:25px;
+
+    color:#6c63ff;
+
 }
 
-.dashboard-container h1::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:3.25rem;
-  height:2px;
-  background:var(--gold);
+.search-input{
+
+    width:100%;
+
+    max-width:420px;
+
+    padding:13px;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    outline:none;
+
+    margin-bottom:25px;
+
 }
 
-.dashboard-card{
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-left:2px solid var(--gold);
-  padding:2rem 2.25rem;
-  transition:background .3s ease;
+.search-input:focus{
+
+    border-color:#6c63ff;
+
 }
 
-.dashboard-card h3{
-  font-family:"Fraunces", serif;
-  font-weight:500;
-  font-size:1.3rem;
-  color:var(--ink);
-  margin:0 0 .6rem;
+.notes-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
+
 }
 
-.dashboard-card p{
-  font-family:"Manrope", sans-serif;
-  font-size:.9rem;
-  color:var(--text-muted);
-  margin:0;
-}
+.app.dark .search-input{
 
-.app.dark .dashboard-container h1{
-  color:var(--paper);
-}
+    background:#1d2027;
 
-.app.dark .dashboard-card{
-  background:var(--ink-soft, #1b212b);
-  border-color:rgba(239,235,227,0.14);
-}
+    color:white;
 
-.app.dark .dashboard-card h3{
-  color:var(--paper);
-}
+    border-color:#444;
 
-.app.dark .dashboard-card p{
-  color:rgba(239,235,227,0.6);
 }

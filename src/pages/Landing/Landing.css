@@ -1,0 +1,111 @@
+.landing{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:20px;
+}
+
+.logo span{
+    font-size:70px;
+}
+
+.logo h1{
+    font-size:64px;
+    color:#6c63ff;
+}
+
+.landing h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.landing p{
+    font-size:18px;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.landing-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.landing-buttons button{
+    padding:14px 32px;
+    border:none;
+    border-radius:14px;
+    background:#6c63ff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.landing-buttons button:hover{
+    transform:translateY(-3px);
+}
+
+.secondary-btn{
+    background:#7b73ff;
+}
+
+/* ---------- Features ---------- */
+
+.features{
+    max-width:1100px;
+    margin:80px auto;
+    text-align:center;
+    padding:0 20px;
+}
+
+.features h2{
+    color:#6c63ff;
+    margin-bottom:40px;
+}
+
+.feature-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.feature-list div{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.feature-list div:hover{
+    transform:translateY(-6px);
+}
+
+/* ---------- About ---------- */
+
+.about{
+    max-width:800px;
+    margin:100px auto;
+    text-align:center;
+    padding:0 20px 80px;
+}
+
+.about h2{
+    color:#6c63ff;
+    margin-bottom:20px;
+}
+
+.about p{
+    line-height:1.8;
+    color:#666;
+}

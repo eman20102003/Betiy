@@ -28,8 +28,6 @@ const validate = () => {
 
   return "";
 };
-
-
 const handleLogin = async (e) => {
   e.preventDefault();
 
@@ -40,15 +38,12 @@ const handleLogin = async (e) => {
     setError(validationError);
     return;
   }
-
-
-  const success = await login(
+const success = await login(
     email,
     password
   );
 
-
-  if (success) {
+ if (success) {
     navigate("/dashboard");
   } else {
     setError("Invalid email or password");

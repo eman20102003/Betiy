@@ -1,0 +1,103 @@
+.note-form {
+
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.07);
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+max-width:420px;
+
+margin:25px 0;
+
+
+}
+
+
+
+.note-form input,
+.note-form textarea,
+.note-form select {
+
+
+padding:13px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+font-size:15px;
+
+outline:none;
+
+}
+
+
+
+.note-form textarea {
+
+height:120px;
+
+resize:none;
+
+}
+
+
+
+.note-form button {
+
+background:#6c63ff;
+
+color:white;
+
+border:none;
+
+padding:12px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-weight:500;
+
+}
+
+
+
+.note-form button:hover {
+
+opacity:.9;
+
+}
+
+
+
+.app.dark .note-form {
+
+background:#242832;
+
+}
+
+
+
+.app.dark .note-form input,
+.app.dark .note-form textarea,
+.app.dark .note-form select {
+
+background:#1c1f26;
+
+color:white;
+
+border-color:#444;
+
+}
